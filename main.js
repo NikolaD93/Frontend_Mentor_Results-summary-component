@@ -1,4 +1,5 @@
 const dataContainer = document.querySelector('.data-container');
+const textNumber = document.querySelector('.text-number');
 
 const data = [
     {
@@ -30,6 +31,18 @@ const data = [
         "textColor": "#1125D6",
     }
 ];
+
+let timelag;
+let finishNumber = 76;
+let countSpeed = 40;
+
+for (let i = 0; i <= finishNumber; i++) {
+    timelag = i * countSpeed;
+
+    setTimeout(() => {
+        textNumber.innerHTML = i;
+    }, timelag);
+}
 
 data.forEach((item, id) => {
     dataContainer.innerHTML += `<div class="wrapper" style="background:${item.background}">
